@@ -9,6 +9,48 @@ class Apprenant
     public $birthDate;
 
     /**
+     * @param $name
+     * @param $surname
+     * @param $birthDate
+     */
+    public function __construct($name, $surname, $birthDate)
+    {
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->birthDate = $birthDate;
+    }
+
+    /**
+     * methode getName, get the name of the student
+     *
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * methode getSurname, get the surname of the student
+     *
+     * @return mixed
+     */
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    /**
+     * methode getBirthDate, get the BirthDate of the student
+     *
+     * @return mixed
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
      * methode getListApprenant :display all apprenant list
      * @return array[]
      */

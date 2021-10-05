@@ -7,6 +7,60 @@ class Promotion{
     public $numbreOfStudent;
 
     /**
+     * @param $name
+     * @param $start
+     * @param $end
+     * @param $numbreOfStudent
+     */
+    public function __construct($name, $start, $end, $numbreOfStudent)
+    {
+        $this->name = $name;
+        $this->start = $start;
+        $this->end = $end;
+        $this->numbreOfStudent = $numbreOfStudent;
+    }
+
+    /**
+     * methode getName, get the name
+     *
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * methode getStart, get when the promotion is starting
+     *
+     * @return mixed
+     */
+    public function getStart()
+    {
+        return $this->start;
+    }
+
+    /**
+     * methode getEnd, get when the promotion is ending
+     *
+     * @return mixed
+     */
+    public function getEnd()
+    {
+        return $this->end;
+    }
+
+    /**
+     * methode geNumbreOfStudent, get how many student are attending the promotion this years
+     *
+     * @return mixed
+     */
+    public function getNumbreOfStudent()
+    {
+        return $this->numbreOfStudent;
+    }
+
+    /**
      * methode getListPromotions :display all promotion list
      * @return array[]
      */

@@ -1,9 +1,43 @@
 <?php
 
 class Subject{
-    public $name;
-    public $duration;
-    public $description;
+    private $name;
+    private $duration;
+    private $description;
+
+    public function __construct($nameParm,$duration,$description){
+        $this->name = $nameParm;
+        $this->duration = $duration;
+        $this->description = $description;
+    }
+
+    /**
+     * methode getName, get the name of the subject
+     *
+     * @return mixed
+     */
+    public function getName(){
+        return $this->name;
+    }
+
+    /**
+     *  methode getDuration, get the duration in a years of the subject
+     *
+     * @return mixed
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * methode getDescription, get the description of the subject
+     *
+     * @return mixed
+     */
+    public function getDescription(){
+        return $this->description;
+    }
 
     /**
      * methode getListSubject :display all subjects list
