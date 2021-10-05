@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=formateurView" title="voir la liste des formateur">voir la liste des formateur</a>
 <?php
 if(count($aSubjects) >= 1):
     ?>

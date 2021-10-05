@@ -1,4 +1,4 @@
 <?php
 
-include 'models/SubjectModel.php';
-include 'views/subjectView.php';
+require 'models/SubjectModel.php';
+require 'views/subjectView.php';
