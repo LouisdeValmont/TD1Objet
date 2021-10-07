@@ -8,35 +8,48 @@
     <title>Document</title>
 </head>
 <body>
-<a href="http://127.0.0.1/TD1Objet/index.php/?action=formateurView" title="voir la liste des formateur">voir la liste des formateur</a>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=formateurView" title="voir la liste des formateur">voir la liste
+    des formateur</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=subjectView" title="voir la liste des formateur">voir la liste
+    des Subjects</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=promoView" title="voir la liste des formateur">voir la liste
+    des promo</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=apprenantView" title="voir la liste des formateur">voir la liste
+    des apprenant</a><br/>
+
+
 <?php
-if(count($aSubjects) >= 1):
+if (count($aSubjects) >= 1):
     ?>
-    <ul>
-        <?php
-        //Liste des subjects
-        foreach($aSubjects as $subject):
-            ?>
-            <li>
-                <h2><?php echo $subject['nom']; ?> </h2>
-                <?php
-                if($subject['duree']>4):
-                    ?>
-                    <strong>Module important</strong>
-                <?php
-                endif;
-                ?>
-                <ul>
-                    <li>Durée <?php echo $subject['duree']; ?>heures</li>
-                </ul>
 
-                <p><?php echo $subject['description']; ?></p>
-            </li>
-        <?php
-        endforeach;
+    <table>
+    <?php
+    //Liste des subjects
+    foreach ($aSubjects as $index => $osubject):
         ?>
-    </ul>
-
+    <tr>
+        <td>
+            <?php echo $osubject->getName(); ?>
+        </td>
+        <td>
+            Durée <?php echo $osubject->getDuration(); ?>heures
+        </td>
+        <td>
+          <?php echo $osubject->getDescription(); ?>
+        </td>
+        <td>
+            <a href="controlers/index.php/?action=subjectEdit&index=<?php echo $index ?>" title="Remove<?php echo $index ?>">Editer</a>
+        </td>
+        <td>
+            <a href="controlers/index.php/?action=subjectRemove&index=<?php echo $index ?>" title="Remove<?php echo $index ?>">Delete</a>
+        </td>
+    </tr>
+    <?php
+    endforeach;
+    ?>
+    </table>
+    <a href="controlers/index.php/?action=subjectAdd"
+       title="Add">Ajouter</a>
 <?php
 else:
     ?>

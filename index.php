@@ -25,6 +25,15 @@ switch ($_GET["action"]):
     case "subjectView":
         include 'controlers/subjectController.php';
         break;
+    case "subjectRemove":
+        include 'controlers/subjectControllerRemove.php';
+        break;
+    case "subjectEdit":
+        include 'controlers/subjectControllerEdit.php';
+        break;
+    case "subjectAdd":
+        include 'controlers/subjectControllerAdd.php';
+        break;
     case "formateurView":
         include 'controlers/formateurController.php';
         break;
@@ -34,6 +43,13 @@ switch ($_GET["action"]):
     case "apprenantView":
         include 'controlers/apprenantController.php';
         break;
+    case "apprenantRemove":
+        include 'controlers/apprenantControllerRemove.php';
+        break;
+    case "apprenantEdit":
+        include 'controlers/apprenantControllerEdit.php';
+        break;
+
     default:
         include 'services/page404.php';
 endswitch;

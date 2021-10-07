@@ -7,22 +7,7 @@ $aApprenants = array(
     2 => new Apprenant('Doryan', 'Prête', 1993),
     3 => new Apprenant('Francois', 'Chastel', 1995),
 );
-
-
-
-//$oApprenantVictor = new Apprenant('Victor','vic',1991);
-//$oApprenantVictor->addToApprenant($aApprenants);
-//
-//$removePHP = $aApprenants[0];
-//$removePHP->removeFromList($aApprenants, 0);
-
-//$aApprenants[1]->updatelist($aApprenants,'lol','','');
-//$aApprenants[3]->updateName($aApprenants,'angular');
-
+$removePHP = $aApprenants[$_GET['index']];
+$removePHP->removeFromList($aApprenants, $_GET['index']);
 
 include 'views/apprenantView.php';
-
-
-
-
-

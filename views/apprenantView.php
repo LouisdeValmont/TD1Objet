@@ -8,20 +8,44 @@
     <title>Document</title>
 </head>
 <body>
-<ul>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=formateurView" title="voir la liste des formateur">voir la liste
+    des formateur</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=subjectView" title="voir la liste des formateur">voir la liste
+    des Subjects</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=promoView" title="voir la liste des formateur">voir la liste
+    des promo</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=apprenantView" title="voir la liste des formateur">voir la liste
+    des apprenant</a><br/>
+
+<?php
+if (count($aApprenants) >= 1):
+?>
+<table>
     <?php
-    //Liste des apprenants
-    $ageTotal = 0;
-    foreach($aApprenants as $apprenant):
+    foreach($aApprenants as $index => $apprenant):
         ?>
-        <li>
-            <h2><?php echo $apprenant['nom']; ?> <?php echo $apprenant['prenom']; ?></h2>
-            <p><?php echo $apprenant['dateNaissance']; ?></p>
-        </li>
+    <tr>
+        <td>
+            <h2><?php echo $apprenant->getName(); ?></h2>
+
+        </td>
+        <td>
+            <?php echo $apprenant->getSurname(); ?>
+        </td>
+        <td>
+            <p><?php echo $apprenant->getBirthDate(); ?></p>
+        </td>
+        <td>
+            <a href="controlers/index.php/?action=apprenantEdit&index=<?php echo $index ?>">Editer</a>
+        </td>
+        <td>
+            <a href="controlers/index.php/?action=apprenantRemove&index=<?php echo $index ?>">Delete</a>
+        </td>
+    </tr>
         <?php
-        $ageTotal +=  2021-$apprenant['dateNaissance'];
     endforeach;
+    endif;
     ?>
-</ul>
+</table>
 </body>
 </html>

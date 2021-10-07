@@ -8,15 +8,24 @@
     <title>Document</title>
 </head>
 <body>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=formateurView" title="voir la liste des formateur">voir la liste
+    des formateur</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=subjectView" title="voir la liste des formateur">voir la liste
+    des Subjects</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=promoView" title="voir la liste des formateur">voir la liste
+    des promo</a><br/>
+<a href="http://127.0.0.1/TD1Objet/index.php/?action=apprenantView" title="voir la liste des formateur">voir la liste
+    des apprenant</a><br/>
+
 <ul>
     <?php
     //Liste des promotions
     foreach($aPromos as $promo):
         ?>
         <li>
-            <h2><?php echo $promo['nom']; ?></h2>
-            <p><?php echo $promo['dateDebut'].' au '.$promo['dateFin']; ?></p>
-            <p>Nombre d'apprenants <?php echo $promo['nombreApprenant']; ?></p>
+            <h2><?php echo $promo->getName(); ?></h2>
+            <p><?php echo $promo->getStart() .' au ' . $promo->getEnd(); ?></p>
+            <p>Nombre d'apprenants <?php echo $promo->getNumbreOfStudent(); ?></p>
         </li>
     <?php
     endforeach;

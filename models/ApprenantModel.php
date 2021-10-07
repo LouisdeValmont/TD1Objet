@@ -31,6 +31,14 @@ class Apprenant
     }
 
     /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
      * methode getSurname, get the surname of the student
      *
      * @return mixed
@@ -38,6 +46,14 @@ class Apprenant
     public function getSurname()
     {
         return $this->surname;
+    }
+
+    /**
+     * @param mixed $surname
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
     }
 
     /**
@@ -51,35 +67,140 @@ class Apprenant
     }
 
     /**
-     * methode getListApprenant :display all apprenant list
-     * @return array[]
+     * @param mixed $birthDate
      */
-    public function getListApprenant(){
-        $aApprenants = array(
-            array(  'nom' => 'Prugnaud',
-                'prenom' => 'Aurélien',
-                'dateNaissance' => 1995,
-            ),
-            array(  'nom' => 'Prête',
-                'prenom' => 'Doryan',
-                'dateNaissance' => 1979,
-            ),
-            array(  'nom' => 'Chastel',
-                'prenom' => 'François',
-                'dateNaissance' => 1979,
-            ),
-            array(  'nom' => 'Lahondès',
-                'prenom' => 'Nicolas',
-                'dateNaissance' => 1998,
-            ),
-            array(  'nom' => 'Poigt',
-                'prenom' => 'Valentin',
-                'dateNaissance' => 1993,
-            )
-        );
-        return $aApprenants;
+    public function setBirthDate($birthDate)
+    {
+        $this->birthDate = $birthDate;
     }
 
+    /**
+     * add to apprenant
+     * @param array
+     */
+    public function addToApprenant(&$aApprenant){
+        array_push($aApprenant, $this);
+    }
+
+    /**
+     * remove object from the subject list
+     * @param array
+     * @param int
+     */
+    public function removeFromList(&$aApprenant, $index){
+        unset($aApprenant[$index]);
+    }
+
+    /**
+     * edit the object
+     * @param mixed
+     * @param mixed
+     */
+    //methode de maricel
+    public function updateSubject($key, $newValue)
+    {
+        $this->$key = $newValue;
+    }
+
+    /**
+     * edit all the object in the Subject list
+     * @param array
+     * @param string $name
+     * @param string $surname
+     * @param string $birthDate
+     */
+    //methode Cindy
+    public function updatelist(&$aApprenant, $name='', $surname='', $birthDate='')
+    {
+        $index = array_search($this, $aApprenant);
+        if (!empty($name)):
+            $aApprenant[$index]->name = $name;
+        endif;
+        if (!empty($surname)):
+            $aApprenant[$index]->surname = $surname;
+        endif;
+        if (!empty($birthDate)):
+            $aApprenant[$index]->birthDate = $birthDate;
+        endif;
+    }
+
+    /**
+     * methode updatelistByIndex
+     * @param array $aApprenant
+     * @param int $index
+     * @param string $name
+     * @param string $surname
+     * @param int $dateOfBirth
+     */
+    public function updatelistByIndex(&$aApprenant, $index, $name='', $surname='', $dateOfBirth='')
+    {
+        if (!empty($name)):
+            $aApprenant[$index]->name = $name;
+        endif;
+        if (!empty($surname)):
+            $aApprenant[$index]->surname = $surname;
+        endif;
+        if (!empty($dateOfBirth)):
+            $aApprenant[$index]->dateOfBirth = $dateOfBirth;
+        endif;
+    }
+
+    /**
+     * edit the name of the object in the list
+     * @param array $aApprenant
+     * @param string $name
+     */
+    public function updateName(&$aApprenant, $name='')
+    {
+        $index = array_search($this, $aApprenant);
+        if (!empty($name)):
+            $aApprenant[$index]->name = $name;
+        endif;
+    }
+    /**
+     * edit the surname of the object in the list
+     * @param array $aApprenant
+     * @param string $surname
+     */
+    public function updateDuration(&$aApprenant, $surname='')
+    {
+        $index = array_search($this, $aApprenant);
+        if (!empty($surname)):
+            $aApprenant[$index]->surname = $surname;
+        endif;
+    }
+    /**
+     * edit the birthDate of the object in the list
+     * @param array $aApprenant
+     * @param string $birthDate
+     */
+    public function updateDescription(&$aApprenant, $birthDate='')
+    {
+        $index = array_search($this, $aApprenant);
+        if (!empty($birthDate)):
+            $aApprenant[$index]->birthDate = $birthDate;
+        endif;
+    }
+
+
+    /**
+     * display the list of object
+     * @param array $aApprenant
+     * @return mixed
+     */
+    public function getListSubject($aApprenant){
+        return $aApprenant;
+    }
+
+    /**
+     * Method getListSubjectByIndex
+     * @param array $aApprenant
+     * @param int $index
+     * @return mixed
+     */
+    public function getListSubjectById($aApprenant, $index){
+        return $aApprenant[$index];
+    }
 }
 
 
