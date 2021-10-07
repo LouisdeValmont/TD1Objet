@@ -130,9 +130,9 @@ class Apprenant
      * @param int $index
      * @param string $name
      * @param string $surname
-     * @param int $dateOfBirth
+     * @param int $birthDate
      */
-    public function updatelistByIndex(&$aApprenant, $index, $name='', $surname='', $dateOfBirth='')
+    public function updatelistByIndex(&$aApprenant, $index, $name='', $surname='', $birthDate='')
     {
         if (!empty($name)):
             $aApprenant[$index]->name = $name;
@@ -140,8 +140,8 @@ class Apprenant
         if (!empty($surname)):
             $aApprenant[$index]->surname = $surname;
         endif;
-        if (!empty($dateOfBirth)):
-            $aApprenant[$index]->dateOfBirth = $dateOfBirth;
+        if (!empty($birthDate)):
+            $aApprenant[$index]->birthDate = $birthDate;
         endif;
     }
 

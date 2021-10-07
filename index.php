@@ -49,6 +49,9 @@ switch ($_GET["action"]):
     case "apprenantEdit":
         include 'controlers/apprenantControllerEdit.php';
         break;
+    case "apprenantAdd":
+        include 'controlers/apprenantControllerAdd.php';
+        break;
 
     default:
         include 'services/page404.php';

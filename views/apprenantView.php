@@ -47,5 +47,6 @@ if (count($aApprenants) >= 1):
     endif;
     ?>
 </table>
+<a href="controlers/index.php/?action=apprenantAdd" title="Add">Ajouter</a>
 </body>
 </html>
